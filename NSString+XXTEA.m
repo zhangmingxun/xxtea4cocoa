@@ -135,7 +135,7 @@ static char *xxtea_to_byte_array(xxtea_long *data, xxtea_long len, int include_l
     NSData *_data = [GTMBase64 decodeString:self];
     const unsigned char *data = (const unsigned char *)[_data bytes];
     const unsigned char *strkey = (const unsigned char *)[key UTF8String];
-    xxtea_long len = (xxtea_long) strlen(data);
+    xxtea_long len = (xxtea_long) [_data length];
     
     xxtea_long ret_len;
     const unsigned char *result;
